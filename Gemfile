@@ -6,6 +6,7 @@ gem 'rails', '3.0.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'neo4j', '1.3.1'
+gem 'devise-neo4j'
 
 group :development do
   gem 'rspec-rails'
@@ -26,12 +27,6 @@ end
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-# gem 'neo4j', '1.3.1'
-
-group :development do
-  gem 'rspec-rails'
-end
-
 
 # gem 'aws-s3', :require => 'aws/s3'
 
