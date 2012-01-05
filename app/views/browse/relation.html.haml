@@ -1,0 +1,8 @@
+%h3 Relation #{@relation_name} of #{link_to @object.display_property, browse_object_path(@object.id)}
+
+%table
+  - @relation.each do |object|
+    %tr
+      %td= link_to object.display_property, browse_object_path(object.id)
+
+= will_paginate(@relation)

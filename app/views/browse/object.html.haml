@@ -1,0 +1,17 @@
+%h3= @object.display_property
+
+%table
+  %tr
+    %th Attribute
+    %th Value
+  - @object.class.registered_properties.sort.each do |property|
+    %tr
+      %td= property
+      %td= @object[property]
+
+%table
+  %tr
+    %th Relation
+  - @object.class.registered_relations.each do |rel|
+    %tr
+      %td= link_to rel, browse_relation_path(@object.id, rel)

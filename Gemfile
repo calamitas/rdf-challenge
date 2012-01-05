@@ -8,6 +8,7 @@ gem 'rails', '3.0.11'
 gem 'neo4j', '1.3.1'
 gem 'devise-neo4j'
 gem 'rdf'
+gem 'haml'
 
 group :development do
   gem 'rspec-rails'

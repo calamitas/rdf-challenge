@@ -84,7 +84,8 @@ namespace :rdf do
         reader.each_statement do |statement|
           from_key = statement.subject.to_s.sub(/\Ahttp:\/\/data.linkedct.org\/resource\//, "")
           if old_from_key && from_key != old_from_key
-            object_map[old_from_key] = inserter.create_node(current_attributes, File.dirname(from_key).camelize.constantize)
+            current_attributes["rdf_url"] = "http://data.linkedct.org/resource/" + old_from_key
+            object_map[old_from_key] = inserter.create_node(current_attributes, File.dirname(old_from_key).camelize.constantize)
             current_attributes = {}
             old_from_key = nil
           end
@@ -107,9 +108,7 @@ namespace :rdf do
               current_attributes[attr_name] = value
             end
           when "http://www.w3.org/2000/01/rdf-schema#label"
-            old_from_key = from_key
           when "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-            old_from_key = from_key
           when "http://xmlns.com/foaf/0.1/page"
           when "http://xmlns.com/foaf/0.1/based_near"
           when "http://www.w3.org/2002/07/owl#sameAs"

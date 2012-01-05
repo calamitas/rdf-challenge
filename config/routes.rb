@@ -2,7 +2,10 @@ RdfChallenge::Application.routes.draw do
   
   devise_for :users
   
-  root :to => "home#index"
+  root :to => "browse#index"
+  
+  match "browse/:id" => "browse#object", :as => :browse_object
+  match "browse/:id/:relation" => "browse#relation", :as => :browse_relation
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

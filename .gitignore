@@ -4,4 +4,4 @@ log/*.log
 tmp/
 .rbenv-version
 dataset/
-db/neo4j-development/
+db/neo4j-development*/
