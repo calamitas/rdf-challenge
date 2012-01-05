@@ -3,3 +3,5 @@ db/*.sqlite3
 log/*.log
 tmp/
 .rbenv-version
+dataset/
+db/neo4j-development/
